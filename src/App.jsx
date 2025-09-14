@@ -4,6 +4,7 @@ import React, { Suspense } from 'react';
 import Earth from './Earth';
 import HeroText from './Herotext';
 import InfoSection from './InfoSection';
+import GithubProjects from './GithubProjects';
 
 function App() {
   return (
@@ -30,6 +31,11 @@ function App() {
           </Suspense>
         </Canvas>
         <HeroText />
+      </section>
+
+      {/* Section 2: GitHub Projects */}
+      <section className="w-full min-h-screen snap-start overflow-hidden">
+        <GithubProjects />
       </section>
 
       {/* Section 3: Info Section */}

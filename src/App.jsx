@@ -5,17 +5,18 @@ import Earth from './Earth';
 import HeroText from './Herotext';
 import InfoSection from './InfoSection';
 import GithubProjects from './GithubProjects';
+import About from './About';
 
 function App() {
   return (
-    <div 
+    <div
       className="w-full h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth scrollbar-hide font-serif bg-black"
       style={{
         scrollbarWidth: 'none',
         msOverflowStyle: 'none',
         WebkitOverflowScrolling: 'touch',
       }}
-    >      
+    >
       {/* Section 1: Earth + HeroText */}
       <section className="relative w-full h-screen snap-start">
         <Canvas
@@ -33,12 +34,17 @@ function App() {
         <HeroText />
       </section>
 
-      {/* Section 2: GitHub Projects */}
+      {/* Section 2: About Me */}
+      <section className="w-full min-h-screen snap-start bg-black">
+        <About />
+      </section>
+
+      {/* Section 3: GitHub Projects */}
       <section className="w-full min-h-screen snap-start overflow-hidden">
         <GithubProjects />
       </section>
 
-      {/* Section 3: Info Section */}
+      {/* Section 4: Info Section */}
       <section className="w-full min-h-screen snap-start">
         <InfoSection />
       </section>

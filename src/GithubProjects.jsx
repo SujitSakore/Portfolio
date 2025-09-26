@@ -2,99 +2,90 @@ import React from "react";
 
 const GithubProjects = () => {
   return (
-    <section className="min-h-screen bg-black text-white overflow-y-auto">
-      <div className="container mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold mb-12 text-center">GitHub Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+    <section className="min-h-screen bg-black text-white flex items-center">
+      <div className="container mx-auto px-6 py-20">
+        {/* Heading */}
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-14 text-center tracking-tight">
+          GitHub Projects
+        </h2>
 
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
           
-          {/* AI Proctoring Assessment Website */}
+          {/* Project 1 */}
           <a
             href="https://github.com/SujitSakore/Codevx"
             target="_blank"
             rel="noopener noreferrer"
-            className="block border border-gray-700 rounded-lg p-6 transition hover:bg-gray-900 h-full"
+            className="group block rounded-2xl p-8 bg-gradient-to-br from-gray-900 to-black border border-transparent hover:border-purple-500/70 transition-all duration-500 shadow-lg hover:shadow-purple-500/30 hover:scale-[1.03]"
           >
-            <div className="font-semibold text-xl mb-3">AI Proctoring Assessment Website</div>
-            <div className="text-sm text-gray-300">
-              Full-stack platform for coding/aptitude assessments with AI-based proctoring, real-time evaluation, and responsive design.
-            </div>
+            <h3 className="font-bold text-2xl md:text-3xl mb-3 group-hover:text-purple-400 text-center md:text-left">
+              AI Proctoring Assessment Website
+            </h3>
+            <p className="text-base text-gray-400 leading-relaxed text-center md:text-left">
+              Full-stack platform for coding/aptitude assessments with AI-based 
+              proctoring, real-time evaluation, and responsive design.
+            </p>
           </a>
 
-          {/* PyDeepFlow */}
+          {/* Project 2 */}
           <a
             href="https://github.com/SujitSakore/PyDeepFlow"
             target="_blank"
             rel="noopener noreferrer"
-            className="block border border-gray-700 rounded-lg p-6 transition hover:bg-gray-900 h-full"
+            className="group block rounded-2xl p-8 bg-gradient-to-br from-gray-900 to-black border border-transparent hover:border-purple-500/70 transition-all duration-500 shadow-lg hover:shadow-purple-500/30 hover:scale-[1.03]"
           >
-            <div className="font-semibold text-xl mb-3">PyDeepFlow</div>
-            <div className="text-sm text-gray-300">
-              This is my own Deep Learning Package, optimized for performing Deep Learning Tasks and easy to learn and integrate into projects.
-            </div>
+            <h3 className="font-bold text-2xl md:text-3xl mb-3 group-hover:text-purple-400 text-center md:text-left">
+              PyDeepFlow
+            </h3>
+            <p className="text-base text-gray-400 leading-relaxed text-center md:text-left">
+              Custom Deep Learning package optimized for simplicity, 
+              learning, and integration into projects.
+            </p>
           </a>
 
-          {/* CADMI-AI */}
+          {/* Project 3 */}
           <a
             href="https://github.com/SujitSakore/Cadmi_AI"
             target="_blank"
             rel="noopener noreferrer"
-            className="block border border-gray-700 rounded-lg p-6 transition hover:bg-gray-900 h-full"
+            className="group block rounded-2xl p-8 bg-gradient-to-br from-gray-900 to-black border border-transparent hover:border-purple-500/70 transition-all duration-500 shadow-lg hover:shadow-purple-500/30 hover:scale-[1.03]"
           >
-            <div className="font-semibold text-xl mb-3">CADMI-AI</div>
-            <div className="text-sm text-gray-300">
-            Predicts apt information for a student who needs references for possible admissions in undergraduate universitites.
-            </div>
+            <h3 className="font-bold text-2xl md:text-3xl mb-3 group-hover:text-purple-400 text-center md:text-left">
+              CADMI-AI
+            </h3>
+            <p className="text-base text-gray-400 leading-relaxed text-center md:text-left">
+              Predicts apt information for students seeking references 
+              for possible admissions in undergraduate universities.
+            </p>
           </a>
 
-          {/* speak-to-docs*/}
+          {/* Project 4 */}
           <a
             href="https://github.com/SujitSakore/speak-to-docs"
             target="_blank"
             rel="noopener noreferrer"
-            className="block border border-gray-700 rounded-lg p-6 transition hover:bg-gray-900 h-full"
+            className="group block rounded-2xl p-8 bg-gradient-to-br from-gray-900 to-black border border-transparent hover:border-purple-500/70 transition-all duration-500 shadow-lg hover:shadow-purple-500/30 hover:scale-[1.03]"
           >
-            <div className="font-semibold text-xl mb-3">speak-to-docs</div>
-            <div className="text-sm text-gray-300">
-             Speech-enabled Retrieval-Augmented Generation solution
-            </div>
+            <h3 className="font-bold text-2xl md:text-3xl mb-3 group-hover:text-purple-400 text-center md:text-left">
+              Speak-to-Docs
+            </h3>
+            <p className="text-base text-gray-400 leading-relaxed text-center md:text-left">
+              Speech-enabled Retrieval-Augmented Generation solution 
+              for smarter document interaction.
+            </p>
           </a>
+        </div>
 
-          {/* Game */}
+        {/* See More Button */}
+        <div className="flex justify-center mt-16">
           <a
-            href="https://github.com/SujitSakore/Space-Shooter-Game"
+            href="https://github.com/SujitSakore"
             target="_blank"
             rel="noopener noreferrer"
-            className="block border border-gray-700 rounded-lg p-6 transition hover:bg-gray-900 h-full md:col-span-2"
+            className="px-10 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 rounded-full text-lg font-semibold transition-all duration-300 shadow-md hover:shadow-purple-500/30"
           >
-            <div className="font-semibold text-xl mb-3">Space Shooter Game</div>
-            <div className="text-sm text-gray-300">
-              Developed a fully responsive space-shooting website game individually using JavaScript events. Game is compatible with all devices including touch devices. Tech Stack: HTML, CSS, JavaScript.
-            </div>
-          </a>
-           {/* Air-Ticket-Reservation */}
-          <a
-            href="https://github.com/SujitSakore/Air-Ticket-Reservation"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block border border-gray-700 rounded-lg p-6 transition hover:bg-gray-900 h-full md:col-span-2"
-          >
-            <div className="font-semibold text-xl mb-3">Air Ticket Reservation</div>
-            <div className="text-sm text-gray-300">
-              Air Ticket Reservation streamlines flight bookings with user-friendly features. It simplifies search, reservation, and management, ensuring a seamless experience. Designed for efficiency, it redefines travel planning with ease.
-            </div>
-          </a>
-          {/* Expense-Tracker */}
-          <a
-            href="https://github.com/SujitSakore/Expense-Tracker"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block border border-gray-700 rounded-lg p-6 transition hover:bg-gray-900 h-full md:col-span-2"
-          >
-            <div className="font-semibold text-xl mb-3">Expense-Tracker</div>
-            <div className="text-sm text-gray-300">
-              Expense Tracker is a handy tool for managing personal finances. It helps users track expenses, categorize spending, and gain insights into their financial habits. Designed for simplicity and efficiency, it empowers users to make informed decisions about their money.
-            </div>
+            See More
           </a>
         </div>
       </div>

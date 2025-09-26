@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import {
-  FaSearch,
   FaLinkedin,
   FaGithub,
-  FaFileAlt,
+  FaInstagram,
+  FaTwitter,
+  FaPaperPlane,
+  FaPhone,
 } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
-const InfoSection = () => {
+const ContactSection = () => {
   const [time, setTime] = useState("");
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     const updateTime = () => {
@@ -24,90 +28,165 @@ const InfoSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const leftIcons = [
-    {
-      icon: <FaLinkedin />,
-      label: "LinkedIn",
-      url: "https://www.linkedin.com/in/sujitsakore/",
-    },
-    {
-      icon: <FaGithub />,
-      label: "GitHub",
-      url: "https://github.com/SujitSakore",
-    },
-    {
-      icon: <FaFileAlt />,
-      label: "Resume",
-      url: "",
-    },
-  ];
-
   return (
-    <section className="min-h-screen bg-black text-white">
-      <div className="container mx-auto h-full flex items-center justify-center px-4 lg:px-8">
-        <div className="flex flex-col lg:flex-row w-full max-w-7xl gap-8 py-12">
-          {/* Left Column */}
-          <div className="lg:w-1/2 border-r border-gray-800 flex flex-col justify-evenly space-y-12 pr-8">
-            {leftIcons.map((item, idx) => (
+    <section className="min-h-screen flex flex-col justify-between bg-black text-white px-4">
+      {/* MAIN CONTENT */}
+      <div className="container mx-auto flex flex-col items-center justify-center flex-grow py-12">
+        {/* Title */}
+        <h2 className="text-4xl font-extrabold mb-12 text-center">
+          Contact Me
+        </h2>
+
+        {/* TWO COLUMN LAYOUT */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl w-full mx-auto items-center">
+          {/* LEFT SIDE */}
+          <div className="flex flex-col items-center justify-center space-y-6">
+            {/* Email */}
+            <div className="flex items-center space-x-3">
+              <FaPaperPlane className="text-purple-500 text-2xl" />
               <a
-                key={idx}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={item.label}
-                className="flex items-center space-x-8 hover:text-cyan-400 transition duration-300"
+                href="mailto:sujitsakore33@gmail.com"
+                className="text-lg hover:text-purple-400 transition"
               >
-                <div className="w-20 h-20 rounded-full flex items-center justify-center text-3xl shadow-lg bg-white text-black">
-                  {item.icon}
-                </div>
-                <span className="text-xl font-medium">{item.label}</span>
+                sujitsakore33@gmail.com
               </a>
-            ))}
+            </div>
+
+            {/* Phone */}
+            <div className="flex items-center space-x-3">
+              <FaPhone className="text-purple-500 text-2xl" />
+              <a
+                href="tel:7020464564"
+                className="text-lg hover:text-purple-400 transition"
+              >
+                7020464564
+              </a>
+            </div>
+
+            {/* Social Icons */}
+            <div className="flex space-x-4">
+              {[
+                { icon: <FaLinkedin size={22} />, link: "https://linkedin.com/in/sujitsakore" },
+                { icon: <FaInstagram size={22} />, link: "https://instagram.com/" },
+                { icon: <FaGithub size={22} />, link: "https://github.com/SujitSakore" },
+                { icon: <FaTwitter size={22} />, link: "https://twitter.com/" },
+              ].map((item, i) => (
+                <a
+                  key={i}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-gray-800 rounded-lg hover:bg-purple-600 transition shadow-md"
+                >
+                  {item.icon}
+                </a>
+              ))}
+            </div>
+
+            {/* CV Button */}
+            <div className="pt-4">
+              <a
+                href="/resume.pdf"
+                download
+                className="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-90 rounded-lg font-semibold shadow-lg transition"
+              >
+                Download CV
+              </a>
+            </div>
           </div>
 
-          {/* Right Column */}
-          <div className="lg:w-1/2 flex flex-col justify-between space-y-12 pl-8">
-            <div className="text-4xl font-bold">
-              <span className="px-4 py-1 bg-white text-black">
-                Sujit Sakore.
-              </span>
-            </div>
+          {/* RIGHT SIDE (MAP + DETAILS) */}
+<div className="flex flex-col items-center space-y-6 w-full">
+  {/* Map */}
+  <div
+    className="rounded-2xl overflow-hidden shadow-xl border border-purple-700 transition duration-300 hover:shadow-purple-500/40"
+    style={{ width: '80%', height: '300px' }} // <-- Change width & height here
+  >
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d809812.3768456928!2d73.59358703783576!3d19.09436189416828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1756655184889!5m2!1sen!2sin"
+      className="w-full h-full border-0"
+      loading="lazy"
+      allowFullScreen
+    ></iframe>
+  </div>
 
-            <div className="text-lg space-y-4">
-              <p className="text-xl">+917020464564</p>
-              <p className="text-xl">sujitsakore33@gmail.com</p>
-            </div>
 
-            <div className="space-y-6">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d809812.3768456928!2d73.59358703783576!3d19.09436189416828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1756655184889!5m2!1sen!2sin"
-                width="100%"
-                height="300"
-                className="rounded-lg shadow-lg"
-                loading="lazy"
-              />
-              <div className="grid grid-cols-3 gap-8 text-base">
-                <div>
-                  <p className="font-semibold mb-2">Location</p>
-                  <p>Pune, India</p>
-                </div>
-                <div>
-                  <p className="font-semibold mb-2">India Time</p>
-                  <p>{time}</p>
-                </div>
-                <div>
-                  <p className="font-semibold mb-2">Status</p>
-                  <p className="text-green-400">● Available</p>
-                </div>
+
+            {/* Location, Time, Status */}
+            <div className="flex justify-around items-center text-center w-full">
+              <div>
+                <p className="text-gray-400 text-sm">Location</p>
+                <p className="text-lg font-semibold">Pune, India</p>
+              </div>
+              <div>
+                <p className="text-gray-400 text-sm">India Time</p>
+                <p className="text-lg font-semibold">{time}</p>
+              </div>
+              <div>
+                <p className="text-gray-400 text-sm">Status</p>
+                <p className="text-lg font-semibold text-green-400 animate-pulse">
+                  Available
+                </p>
               </div>
             </div>
-
-            <div className="text-4xl font-bold">SSS.</div>
           </div>
         </div>
+
+        {/* MESSAGE BUTTON + FORM */}
+        <div className="text-center mt-10 w-full">
+          <button
+            onClick={() => setShowForm(!showForm)}
+            className="px-8 py-3 bg-gradient-to-r from-gray-800 to-gray-700 hover:from-purple-600 hover:to-indigo-600 rounded-full font-semibold transition shadow-lg"
+          >
+            📩 Send a Message / Query
+          </button>
+
+          <AnimatePresence>
+            {showForm && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="overflow-hidden mt-6"
+              >
+                <div className="max-w-lg mx-auto bg-gray-900 rounded-2xl shadow-lg border border-purple-700 hover:shadow-purple-500/40 transition">
+                  <form className="space-y-4 p-6">
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      className="w-full px-4 py-3 rounded-lg bg-black text-white border border-gray-700 focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                    />
+                    <input
+                      type="email"
+                      placeholder="Your Email"
+                      className="w-full px-4 py-3 rounded-lg bg-black text-white border border-gray-700 focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                    />
+                    <textarea
+                      placeholder="Write your message..."
+                      rows="4"
+                      className="w-full px-4 py-3 rounded-lg bg-black text-white border border-gray-700 focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                    ></textarea>
+                    <button
+                      type="submit"
+                      className="w-full py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-90 rounded-lg font-semibold transition"
+                    >
+                      Send
+                    </button>
+                  </form>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
+
+      {/* FOOTER */}
+      <footer className="py-6 text-center text-gray-50 text-sm">
+        Thank you, from Sujit ❤️
+      </footer>
     </section>
   );
 };
 
-export default InfoSection;
+export default ContactSection;

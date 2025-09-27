@@ -40,14 +40,14 @@ const About = () => {
             viewport={{ once: true }}
           >
             <p className="text-gray-300 text-base md:text-lg leading-relaxed md:leading-loose">
-              Hi, I'm <span className="text-white font-semibold hover:text-purple-400 transition-colors duration-300">Sujit Sakore</span>. <br />
+              Hi, I'm <span className="text-white font-semibold hover:text-purple-400 transition-colors duration-300">Sujit Sampat Sakore</span>. <br />
               I'm a{" "}
               <span className="text-indigo-400 font-semibold hover:text-indigo-300 transition-colors duration-300">
                 Final-year Computer Science undergraduate at NIT Nagaland
               </span>{" "}
               with experience in{" "}
               <span className="font-bold text-white hover:text-purple-400 transition-colors duration-300">
-                data science, full-stack development, and technical leadership
+                data science, full-stack development, AI/ML, and technical leadership
               </span>.
               <br /><br />
               Adept at delivering impactful projects, coordinating large-scale

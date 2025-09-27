@@ -66,10 +66,19 @@ const ContactSection = () => {
             {/* Social Icons */}
             <div className="flex space-x-4">
               {[
-                { icon: <FaLinkedin size={22} />, link: "https://linkedin.com/in/sujitsakore" },
-                { icon: <FaInstagram size={22} />, link: "https://instagram.com/" },
+                {
+                  icon: <FaLinkedin size={22} />,
+                  link: "https://linkedin.com/in/sujitsakore",
+                },
+                {
+                  icon: <FaInstagram size={22} />,
+                  link: "https://www.instagram.com/sujit_sakore_patil?igsh=MTIxenphdnA3Mzhlag==",
+                },
                 { icon: <FaGithub size={22} />, link: "https://github.com/SujitSakore" },
-                { icon: <FaTwitter size={22} />, link: "https://twitter.com/" },
+                {
+                  icon: <FaTwitter size={22} />,
+                  link: "https://x.com/Sujit_Sakore?t=LMUqYo7zc2xtq0ZgbHULsA&s=08",
+                },
               ].map((item, i) => (
                 <a
                   key={i}
@@ -86,31 +95,30 @@ const ContactSection = () => {
             {/* CV Button */}
             <div className="pt-4">
               <a
-                href="/resume.pdf"
-                download
+                href="https://drive.google.com/file/d/1YT_t1NIkZwXdHzN5TxMzAqpb0dBIRZI4/view?usp=drivesdk"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-90 rounded-lg font-semibold shadow-lg transition"
               >
-                Download CV
+                Resume
               </a>
             </div>
           </div>
 
           {/* RIGHT SIDE (MAP + DETAILS) */}
-<div className="flex flex-col items-center space-y-6 w-full">
-  {/* Map */}
-  <div
-    className="rounded-2xl overflow-hidden shadow-xl border border-purple-700 transition duration-300 hover:shadow-purple-500/40"
-    style={{ width: '80%', height: '300px' }} // <-- Change width & height here
-  >
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d809812.3768456928!2d73.59358703783576!3d19.09436189416828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1756655184889!5m2!1sen!2sin"
-      className="w-full h-full border-0"
-      loading="lazy"
-      allowFullScreen
-    ></iframe>
-  </div>
-
-
+          <div className="flex flex-col items-center space-y-6 w-full">
+            {/* Map */}
+            <div
+              className="rounded-2xl overflow-hidden shadow-xl border border-purple-700 transition duration-300 hover:shadow-purple-500/40"
+              style={{ width: "80%", height: "300px" }}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d809812.3768456928!2d73.59358703783576!3d19.09436189416828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1756655184889!5m2!1sen!2sin"
+                className="w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen
+              ></iframe>
+            </div>
 
             {/* Location, Time, Status */}
             <div className="flex justify-around items-center text-center w-full">
@@ -151,20 +159,49 @@ const ContactSection = () => {
                 className="overflow-hidden mt-6"
               >
                 <div className="max-w-lg mx-auto bg-gray-900 rounded-2xl shadow-lg border border-purple-700 hover:shadow-purple-500/40 transition">
-                  <form className="space-y-4 p-6">
+                  <form
+                    className="space-y-4 p-6"
+                    onSubmit={async (e) => {
+                      e.preventDefault();
+                      const form = e.target;
+                      const formData = new FormData(form);
+
+                      try {
+                        await fetch(
+                          "https://script.google.com/macros/s/AKfycbwy-jziBIQ1pXMix92Kh75IwdumTI2zTsHCxoTXbhazgEMivYyg6XNF2cQsje7DPj6Hug/exec",
+                          {
+                            method: "POST",
+                            mode: "no-cors",
+                            body: formData,
+                          }
+                        );
+                        alert("✅ Message sent successfully!");
+                        form.reset();
+                      } catch (err) {
+                        console.error(err);
+                        alert("❌ Failed to send message.");
+                      }
+                    }}
+                  >
                     <input
                       type="text"
+                      name="name"
                       placeholder="Your Name"
+                      required
                       className="w-full px-4 py-3 rounded-lg bg-black text-white border border-gray-700 focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
                     />
                     <input
                       type="email"
+                      name="email"
                       placeholder="Your Email"
+                      required
                       className="w-full px-4 py-3 rounded-lg bg-black text-white border border-gray-700 focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
                     />
                     <textarea
+                      name="message"
                       placeholder="Write your message..."
                       rows="4"
+                      required
                       className="w-full px-4 py-3 rounded-lg bg-black text-white border border-gray-700 focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
                     ></textarea>
                     <button

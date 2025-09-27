@@ -1,0 +1,20 @@
+/* Smooth scrolling globally */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for all browsers */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Momentum scroll on mobile */
+body, #root {
+  -webkit-overflow-scrolling: touch;
+}

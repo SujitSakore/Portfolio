@@ -10,11 +10,9 @@ import About from './About';
 function App() {
   return (
     <div
-      className="w-full h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth scrollbar-hide font-serif bg-black"
+      className="w-full h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth font-serif bg-black"
       style={{
-        scrollbarWidth: 'none',
-        msOverflowStyle: 'none',
-        WebkitOverflowScrolling: 'touch',
+        WebkitOverflowScrolling: 'touch', // Momentum scroll for iOS
       }}
     >
       {/* Section 1: Earth + HeroText */}

@@ -26,7 +26,7 @@ const About = () => {
           {/* Gradient Border Wrapper */}
           <div className="p-[3px] rounded-3xl bg-gradient-to-br from-purple-500 via-indigo-500 to-pink-500 shadow-[0_0_20px_rgba(139,92,246,0.6)]">
             <img
-              src="/public/sujit_about.jpeg"
+              src="/sujit_about.jpeg"
               alt="Sujit Sakore"
               className="rounded-3xl w-60 h-60 md:w-96 md:h-96 object-cover"
             />

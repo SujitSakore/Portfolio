@@ -43,7 +43,7 @@ const About = () => {
               Hi, I'm <span className="text-white font-semibold hover:text-purple-400 transition-colors duration-300">Sujit Sampat Sakore</span>. <br />
               I'm a{" "}
               <span className="text-indigo-400 font-semibold hover:text-indigo-300 transition-colors duration-300">
-                Final-year Computer Science undergraduate at NIT Nagaland
+                Final-year Computer Science undergraduate at National Institute of Technology(NIT), Nagaland
               </span>{" "}
               with experience in{" "}
               <span className="font-bold text-white hover:text-purple-400 transition-colors duration-300">

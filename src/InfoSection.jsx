@@ -105,20 +105,20 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* RIGHT SIDE (MAP + DETAILS) */}
-          <div className="flex flex-col items-center space-y-6 w-full">
-            {/* Map */}
-            <div
-              className="rounded-2xl overflow-hidden shadow-xl border border-purple-700 transition duration-300 hover:shadow-purple-500/40"
-              style={{ width: "80%", height: "300px" }}
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d809812.3768456928!2d73.59358703783576!3d19.09436189416828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1756655184889!5m2!1sen!2sin"
-                className="w-full h-full border-0"
-                loading="lazy"
-                allowFullScreen
-              ></iframe>
-            </div>
+  {/* RIGHT SIDE (MAP + DETAILS) */}
+<div className="flex flex-col items-center space-y-6 w-full">
+  {/* Map */}
+  <div
+    className="rounded-2xl overflow-hidden shadow-xl border border-purple-700 transition duration-300 hover:shadow-purple-500/40 w-full max-w-3xl"
+    style={{ aspectRatio: "16/9" }}
+  >
+    <iframe
+      src="https://www.google.com/maps?q=18.8026181,74.024247&hl=en&z=8&output=embed"
+      className="w-full h-full border-0"
+      loading="lazy"
+      allowFullScreen
+    ></iframe>
+  </div>
 
             {/* Location, Time, Status */}
             <div className="flex justify-around items-center text-center w-full">
